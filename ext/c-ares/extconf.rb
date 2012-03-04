@@ -1,3 +1,4 @@
+require 'fileutils'
 require 'mkmf'
 
 case RUBY_PLATFORM
