@@ -18,5 +18,5 @@ case RUBY_PLATFORM
 	when /freebsd/
 		have_header("config_freebsd/ares_config.h")
 end
-$defs.push "-DHAVE_CONFIG_H"
+
 create_makefile('cares/cares')
