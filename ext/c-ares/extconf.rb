@@ -1,23 +1,22 @@
-require 'fileutils'
 require 'mkmf'
 
 case RUBY_PLATFORM
 	when /mswin32/, /mingw32/, /bccwin32/
-		find_header("ares_config.h", File.expand_path("../config_win32", __FILE__))
+		have_header("../config_win32/ares_config.h")
 	when /solaris/
-		find_header("ares_config.h", File.expand_path("../config_sunos", __FILE__))
+		have_header("../config_sunos/ares_config.h")
 	when /openbsd/
-		find_header("ares_config.h", File.expand_path("../config_openbsd", __FILE__))
+		have_header("../config_openbsd/ares_config.h")
 	when /darwin/
-		find_header("ares_config.h", File.expand_path("../config_darwin", __FILE__))
+		have_header("../config_darwin/ares_config.h")
 	when /linux/
-		find_header("ares_config.h", File.expand_path("../config_linux", __FILE__))
+		have_header("../config_linux/ares_config.h")
 	when /cygwin/
-		find_header("ares_config.h", File.expand_path("../config_cygwin", __FILE__))
+		have_header("../config_cygwin/ares_config.h")
 	when /netbsd/
-		find_header("ares_config.h", File.expand_path("../config_netbsd", __FILE__))
+		have_header("../config_netbsd/ares_config.h")
 	when /freebsd/
-		find_header("ares_config.h", File.expand_path("../config_freebsd", __FILE__))
+		have_header("../config_freebsd/ares_config.h")
 end
 $defs.push "-DHAVE_CONFIG_H"
 create_makefile('cares/cares')
